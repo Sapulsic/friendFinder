@@ -202,7 +202,7 @@
 
             <br>
 
-            <button class="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom" id="surveySubmit">Submit</button>
+            <button class="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom" id="surveySubmit" type="submit">Submit</button>
 
         </form>
 
@@ -213,7 +213,7 @@
     <!-- JS -->
 
     <script type="text/javascript">
-    
+
     // Grab Inputs
     $("#surveySubmit").on("click", function(btn) {
         btn.preventDefault();
@@ -226,7 +226,7 @@
                     checked = false;
                 }
             });
-            
+
             // Same as above but with the options
             $("uk-select").each(function() {
                 if ($("inputCheck").val() === "") {
@@ -258,6 +258,11 @@
 
     });
 
+    var currentURL = window.location.origin;
+
+    $.post(currentURL + "../app/data/friends.js", userData, function(data) {
+        alert("Working!");
+    })
 
 
     </script>
@@ -267,6 +272,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.23/js/uikit-icons.min.js"></script>
 
     <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.23/js/uikit.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.23/js/uikit-icons.min.js"></script>
 
